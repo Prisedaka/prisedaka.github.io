@@ -4,7 +4,7 @@ body {
 	padding: 0;
 	font-size: 15px;
 	line-height: 22px;
-	font-family: "Lato";
+	font-family: "Lato", sans-serif;
 	color: #999999;
 	background-color: white;
 }
@@ -68,31 +68,31 @@ p {
 	background: url("img/main_background.png") no-repeat;
 	padding: 0;
 	background-size: cover;
+	text-align: center;
 }
-.main-theme h1 {
+.main-theme .name {
+	width: 600px;
 	text-transform: uppercase;
+	font-weight: bold;
 	font-size: 120px;
+	line-height: 120px;
 	color: white;
 	text-align: center;
-	margin: 0;
-	padding-top: 246px;
-}
-.line {
-	width: 600px;
-	height: 2px;
-	background-color: #15a4fa;
-	margin: 70px auto 35px auto;
+	margin: 0 auto;
+	padding: 197px 0 23px 0;
+	border-bottom: 2px solid #15a4fa;
 }
 .main-theme p {
 	margin:0;
 	color: white;
 	font-size: 20px;
 	text-align: center;
+	padding-top: 33px;
 }
 .main-theme .container {
 	text-align: center;
 }
-.btn {
+.btn-call {
 	display: inline-block;
 	box-sizing: border-box;
 	background-color: #15a4fa;
@@ -101,19 +101,17 @@ p {
 	text-align: center;
 	border-radius: 5px;
 	line-height: 47px;
+	font: inherit;
 }
-.btn:hover {
+.btn-call:hover {
 	border: 1px solid white;
 }
-.btn:active {
+.btn-call:active {
 	background-color: #1187ce;
 }
 .btn-call {
 	margin-top: 62px;
-	padding-top: 5px;
-	/* height: 43px; */
-	width: 182px;
-	height: 60px;
+	padding: 19px 33px 19px 33px;
 	font-size: 20px;
 }
 
@@ -145,11 +143,11 @@ p {
 }
 .feature-item {
 	position: relative;
-	/*border: 1px solid red;*/
 	float: left;
 	text-align: center;
 	width: 330px;
 	margin-right: 72px;
+	
 }
 .feature-item:last-child {
 	margin-right: 0px;
@@ -170,7 +168,12 @@ p {
 	width: 100px;
 	height: 100px;
 }
-
+.feature-clean:before {
+	background-position-x: -392px;
+}
+.feature-awesome:before {
+	background-position-x: -782px;
+}
 /*my-photo*/
 
 .my-photo {
@@ -192,11 +195,14 @@ p {
 	margin: 0;
 	margin-right: 30px;
 	margin-bottom: 30px;
+	/* display: flex; 
+    justify-content: center; 
+    align-items: center; */
 }
 .photo:nth-child(3n) {
 	margin-right: 0;
 }
-.gallery img {
+.gallery .photo-work {
 	width: 360px;
 	height: 260px;
 }
@@ -205,31 +211,44 @@ p {
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 360px;
-	height: 260px;
+	right: 0;
+	bottom: 0;
+	/* width: 360px;
+	height: 260px; */
 	background: rgba(34, 170, 255, 0.9);
 	opacity: 0;
+	
 }
 .gallery .photo:hover::after {
 	opacity: 1;
-	/* cursor: pointer; */
 	transition: opacity 0.5s;
 }
-.img-option {
+.img-option-conteiner {
+	width: 94px;
+	height: 42px;
 	position: absolute;
-	display: inline-block;
+	top: 50%;
+	left: 50%;
+	margin: -21px 0 0 -47px;
+	z-index: 9;
+	padding: 0;
+}
+.img-option {
+	display: block;
 	opacity: 0;
-	top: 109px;
-	left: 133px;
+	float: left;
+	/* top: 109px;
+	left: 133px; */
 	width: 40px;
-	height: 40px;
+	height: 40px;	
 	border: 1px solid white;
-	z-index: 10;
+	/* z-index: 10; */
 	border-radius: 3px;
 	background: 13px 14px url("./img/sprite1.png") no-repeat;
 }
 .img-href {
-	left: 185px;
+	float: right;
+	/* left: 185px; */
 	background-position-x: -37px;
 }
 .gallery .photo:hover .img-option {
@@ -243,7 +262,11 @@ p {
 	position: relative;
 	min-height: 700px;
 	text-align: center;
-	background: url("./img/background2.png"), url("./img/background1.png") no-repeat, no-repeat;
+	
+	/* background: url("./img/background2.png"), url("./img/background1.png") no-repeat, no-repeat; */
+	background: rgba(45, 57, 80, 1) url("./img/background1.png") no-repeat;
+
+	background-blend-mode: lighten;
 	background-size: cover;
 }
 /* .feedback::before {
@@ -284,6 +307,7 @@ form {
 .feedback textarea {
 	height: 160px;
 }
+
 .feedback input[type="text"]:hover,
 .feedback input[type="text"]:focus,
 .feedback textarea:hover,
@@ -302,10 +326,25 @@ form {
 .checkbox-area input[type="submit"] {
 	float: right;
 }
-.checkbox-area .btn-send {
-	width: 142px;
-	height: 47px;
+.btn-send {
+	display: inline-block;
+	box-sizing: border-box;
+	background-color: #15a4fa;
+	text-decoration: none;
+	color: white;
+	text-align: center;
+	border-radius: 5px;
+	line-height: 47px;
+	font: inherit;
+	padding: 12px 52px 12px 52px;
 	font-size: 18px;
+	border: none;
+}
+.btn-send:hover {
+	border: 1px solid white;
+}
+.btn-send:active {
+	background-color: #1187ce;
 }
 
 /* footer */
@@ -319,13 +358,14 @@ form {
 }
 .social {
 	float: right;
-	margin-top: 19px;
+	margin-top: 23px;
+	font-size: 0;
 }
 .social-btn {
 	display: inline-block;
 	width: 40px;
 	height: 40px;
-	font-size: 0;
+	margin-left: 5px;
 	background-image: url("./img/sprite2.png");
 	background-repeat: no-repeat;
 	background-position: 16px 12px;
