@@ -4,6 +4,9 @@
 	<meta charset="UTF-8">
 	<title>STRICT site</title>
 	<link rel="stylesheet" href="style.css">
+	<script>
+		document.write('<script src="http://' + (location.host || '${1:localhost}').split(':')[0] + ':${2:35729}/livereload.js?snipver=1"></' + 'script>')
+	</script>
 </head>
 <body>
 	<header class="page-header dark">
@@ -14,7 +17,7 @@
 	</header>
 	<main class="main-theme clearfix">
 		<div class="container">
-			<div class="name">Strict</div>
+			<h1 class="name">Strict</h1>
 			<!-- <div class="line"></div> -->
 			<p>STRICT is a responsive theme with a clean and minimal look.</p>
 			<a href="#" class="btn btn-call">Call to action</a>
@@ -95,29 +98,31 @@
 		</div>
 	</section>
 	<section class="feedback">
-		<div class="container">
-			<h2>Stay with us</h2>
-			<p>We ensure quailty & support</p>
-			<form action="#" method="post">
-				<div class="feedback-form-group">
-					<input type="text" name="fullname" id="fullname" placeholder="Full Name">
-				</div>
-				<div class="feedback-form-group">
-					<input type="text" name="email" id="email" placeholder="Email Adress">
-				</div>
-				<div class="feedback-form-group">
-					<textarea name="message" id="message" placeholder="Message"></textarea>
-				</div>
-				<div class="checkbox-area clearfix">
-					<label for="">
-						<input type="checkbox" name="subscription">
-						Subscribe Newsletter
-					</label>
-					<input type="submit" class="btn btn-send" value="Send">
-				</div>
-				
-			</form>
-		</div>
+		<div class="color-layer">
+			<div class="container">
+				<h2>Stay with us</h2>
+				<p>We ensure quailty & support</p>
+				<form action="#" method="post">
+					<div class="feedback-form-group">
+						<input type="text" name="fullname" id="fullname" placeholder="Full Name">
+					</div>
+					<div class="feedback-form-group">
+						<input type="text" name="email" id="email" placeholder="Email Adress">
+					</div>
+					<div class="feedback-form-group">
+						<textarea name="message" id="message" placeholder="Message"></textarea>
+					</div>
+					<div class="checkbox-area clearfix">
+						<label>
+							<input class="checkbox" type="checkbox" name="subscription">
+							<span class="checkbox-custom"></span>
+							<span class="label">Subscribe Newsletter</span>
+						</label>
+						<input type="submit" class="btn btn-send" value="Send">
+					</div>
+				</form>
+			</div>
+	</div>
 	</section>
 	<footer class="footer clearfix">
 		<div class="container">
